@@ -23,7 +23,7 @@ minimize total_cost:
 
 ## Restricciones
 
-# Si la oficina o esta abierta (1) en el centro obertivo c, entonces el centro opretivo debe estar abierto (1)
+# Si la oficina o esta abierta (1) en el centro operativo c, entonces el centro opretivo debe estar abierto (1)
 subto centralDebeEstarAbierta: 
     forall <o, c> in O * C do
         x[o,c] <= y[c];

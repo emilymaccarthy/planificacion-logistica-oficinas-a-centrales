@@ -1,14 +1,14 @@
 # Set de las oficinas (O) y centros operacionales (C)
 # set O := {1 to 56};  # Oficinas
-set O := { read "data/oficinas_10.txt" as "<1n>" };
+set O := { read "data/oficinas.txt" as "<1n>" };
 # set C := {1 to 10};  # Centros Operacionales
-set C := { read "data/centrales_10.txt" as "<1n>" };
+set C := { read "data/centrales.txt" as "<1n>" };
 
 
 # Parameteros
 
-param demand[O] := read "data/oficinas_10.txt" as "2n";
-param distance[O * C] := read "data/distancias_10_10" as "n+";
+param demand[O] := read "data/oficinas.txt" as "2n";
+param distance[O * C] := read "data/distancias.txt" as "n+";
 
 # do forall <o> in O do print demand[o];
 

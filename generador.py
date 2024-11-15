@@ -5,6 +5,7 @@ import re
 import csv
 import sys
 import os
+import math
 
 ## no evalua la distnacia real
 # Función para generar el archivo distancias.txt

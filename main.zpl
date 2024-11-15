@@ -49,5 +49,5 @@ subto MaximasOpPorHora:
 
 
 # scip -b commands.txt corre el archivo compila y guarda soluciones
-# luego correr archivo de python (procesamiento.py) para guardar las varibale sprinciaples y el tiempo del solver
+# luego correr archivo de python (generador.py) para guardar las varibale sprinciaples y el tiempo del solver
 

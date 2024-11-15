@@ -2,19 +2,14 @@ read main.zpl  # Lee el modelo ZIMPL
 optimize       # Ejecuta la optimización
 
 # Configura el nivel de salida de información del solver
-set display/verblevel 4  # Aumenta el detalle en el log de salida
+#set display/verblevel 4  # Aumenta el detalle en el log de salida
 
-display statistics  # Muestra estadísticas de la solución, incluyendo el tiempo total de resolución
-
-display solution  # Muestra la solución óptima para las variables de decisión
 
 # Guarda las estadísticas de tiempo y solución en un archivo
 write solution solution.txt  # Guarda la solución en un archivo
 write statistics statistics.txt  # Guarda la solución en un archivo
 
 
-# Extrae y guarda información adicional (como tiempo de resolución)
-display statistics > stats.txt  # Exporta estadísticas generales a un archivo
-display solution > solution.txt  # Exporta los valores de la solución en formato legible
+# scip -b commands.txt para correrlo
 
-# scip -b commands.txt
+

@@ -2,15 +2,15 @@
 set O := {1 to 56};  # Oficinas
 set C := {1 to 10};  # Centros Operacionales
 
-
 # Parameteros
 
-param demand[O] := read "oficinas.txt" as "2n";
-param distance[O * C] := read "distancias.txt" as "n+";
+param demand[O] := read "data/oficinas.txt" as "2n";
+param distance[O * C] := read "data/distancias.txt" as "n+";
 
 # do forall <o> in O do print demand[o];
 
-
+#Para guardar valores 
+param MaxOP := 15000;
 
 ## Variables
 var y[C] binary;                  # Si el centro c esta abierto (1) o cerrado (0)
@@ -36,7 +36,14 @@ subto cadaOficinaConectada:
 # El total de operacion por hora en el centro operacional c no puede exceder 150000
 subto MaximasOpPorHora:
     forall <c> in C do
-        sum <o> in O : x[o,c] * demand[o] <= 15000;
+        sum <o> in O : x[o,c] * demand[o] <= MaxOP;
+
+# el total de oficinas no puede exceder 10 oficinas por central operativa: punto 2
+subto MaximoOficinaACentral:
+    forall <c> in C do
+        sum <o> in O : x[o,c] <= 10;
 
 
+# scip -b commands.txt corre el archivo compila y guarda soluciones
+# luego correr archivo de python (procesamiento.py) para guardar las varibale sprinciaples y el tiempo del solver
 

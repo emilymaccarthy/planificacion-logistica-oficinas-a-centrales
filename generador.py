@@ -29,7 +29,7 @@ def generate_centrales(num_centrales,path_to_save):
 def generate_oficinas(num_oficinas, path_to_save):
     with open(path_to_save, "w") as f:
         for i in range(1, num_oficinas + 1):
-            demanda = random.randint(1, 100)  # Demanda aleatoria entre 1 y 100
+            demanda = random.randint(1000, 1500)  # Demanda aleatoria entre 1 y 100
             lat = random.uniform(-90, 90)  # Latitud aleatoria
             lon = random.uniform(-180, 180)  # Longitud aleatoria
             f.write(f"{i},{demanda},{lat},{lon}\n")
@@ -106,7 +106,7 @@ write statistics statistics.txt
         
     subprocess.run(["scip", "-b", "commands.txt"])
     
-def solver_eficcency_maxop(main_zpl_path, solution_save_name, statistics_save_name,maximun_op_per_hour,parameter_op):
+def solver_eficcency_maxop(main_zpl_path, solution_save_name, statistics_save_name,maximun_op_per_hour):
     """Corre el solver con el main pasado, guarda la solucion y las estadisticas de la solucion, 
     tambien en un csv guarda el tiempo, maxop, cantidad oficinas, cantidad centrales, si resolvio (1) o no (0)
 
@@ -124,7 +124,7 @@ def solver_eficcency_maxop(main_zpl_path, solution_save_name, statistics_save_na
     updated_lines = []
     for line in lines:
         if line.strip().startswith("param MaxOP"):
-            updated_lines.append(parameter_op + "\n")  # Replace the entire line with the new value
+            updated_lines.append(f"param MaxOP := {maximun_op_per_hour};" + "\n")  # Replace the entire line with the new value
         else:
             updated_lines.append(line)
 
@@ -181,7 +181,6 @@ quit
     
     print("Resultados guardados en result_3.csv")
      
-
 def solver_con_instancias_generadas(cant_oficinas, cant_centrales, paths_data,main_zpl_path, solution_save_name, statistics_save_name):
     
     #primer generar los arhcivos de oficinas, centrales, distancias
@@ -285,16 +284,14 @@ run_solver()
 # #punto 3: testear las diferentes instancias de maxop
 main = "main.zpl"
 maxOP = 15000
-replacement = f"param MaxOP := {maxOP};"
+
 
 # solver_eficcency_maxop(
 #     main_zpl_path=main,
 #     solution_save_name=f"results_3/solution_{maxOP}.txt",
 #     statistics_save_name=f"results_3/statistics_{maxOP}.txt",
-#     maximun_op_per_hour=maxOP,
-#     parameter_op =replacement
+#     maximun_op_per_hour=maxOP
 # )
-
 
 
 # # #punto 4: generar instancias nuevas 

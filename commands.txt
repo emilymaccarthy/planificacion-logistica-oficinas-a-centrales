@@ -1,9 +1,10 @@
 
 read main4.zpl
+set limit gap 0.06
 optimize
 
-write solution soluciones/ej4/solution/solution_56_20.txt
-write statistics soluciones/ej4/statistics/statistics_56_20.txt
+write solution soluciones/ej4/solution/solution_60_20.txt
+write statistics soluciones/ej4/statistics/statistics_60_20.txt
 
 quit
     

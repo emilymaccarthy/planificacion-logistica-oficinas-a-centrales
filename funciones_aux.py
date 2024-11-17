@@ -18,7 +18,7 @@ def generate_centrales(num_centrales,path_to_save):
 def generate_oficinas(num_oficinas, path_to_save):
     with open(path_to_save, "w") as f:
         for i in range(1, num_oficinas + 1):
-            demanda = random.randint(1000, 1500)  
+            demanda = random.randint(1000, 23)  
             lat = random.uniform(-34.70, -34.60) 
             lon = random.uniform(-58.45, -58.35)
             f.write(f"{i} {demanda} {lat} {lon}\n")
@@ -211,7 +211,7 @@ def solver_con_instancias_generadas(cant_oficinas, cant_centrales, paths_data,ma
     # Ejecutar SCIP con el archivo de comandos
     commands = f"""
 read {main_zpl_path}
-set limits/time {time_limit}
+set limit gap 0.06
 optimize
 
 write solution {solution_save_name}

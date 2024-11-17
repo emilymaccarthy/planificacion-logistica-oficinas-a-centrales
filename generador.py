@@ -38,6 +38,7 @@ def main():
     for oficina in cant_oficinas:
         for central in cant_centrales:
             paths = [f"data/centrales_{central}.txt",f"data/oficinas_{oficina}.txt", f"data/distancias_{oficina}_{central}"]
+            print(f"\n\nSOLVER: {oficina}_{central}\n\n")
             solver_con_instancias_generadas(
                 cant_oficinas=oficina,
                 cant_centrales=central,
@@ -51,8 +52,5 @@ def main():
     
 
     
-
-
-if __name__ == "__main__":
-    main()
+# Con Gap = 0.05 llega hasta 60_20
 

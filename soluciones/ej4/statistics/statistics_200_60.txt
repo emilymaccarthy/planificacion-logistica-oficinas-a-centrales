@@ -1,1 +1,8 @@
-SCIP Status        : initialization
+SCIP Status        : problem creation / modification
+Total Time         :       0.13
+  reading          :       0.13
+Original Problem   :
+  Problem name     : main4.zpl
+  Variables        : 12060 (12060 binary, 0 integer, 0 implicit integer, 0 continuous)
+  Constraints      : 0 initial, 12260 maximal
+  Objective        : minimize, 12060 non-zeros (abs.min = 0.00085, abs.max = 5700)

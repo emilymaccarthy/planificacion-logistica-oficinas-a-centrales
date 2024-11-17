@@ -1,11 +1,9 @@
 
-read main.zpl
+read main4.zpl
 optimize
 
-set display/verblevel 4
-
-write solution results_4/solution_65_10.txt
-write statistics results_4/statistics_65_10.txt
+write solution soluciones/ej4/solution/solution_56_20.txt
+write statistics soluciones/ej4/statistics/statistics_56_20.txt
 
 quit
     

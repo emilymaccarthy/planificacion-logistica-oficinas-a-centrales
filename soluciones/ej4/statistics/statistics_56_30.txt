@@ -1,6 +1,6 @@
 SCIP Status        : solving was interrupted [gap limit reached]
-Total Time         :       0.90
-  solving          :       0.88
+Total Time         :       0.91
+  solving          :       0.89
   presolving       :       0.03 (included in solving)
   reading          :       0.02
   copying          :       0.00 (0 times copied the problem)
@@ -193,7 +193,7 @@ Primal Heuristics  :   ExecTime  SetupTime      Calls      Found       Best
   padm             :       0.00       0.00          0          0          0
   proximity        :       0.00       0.00          0          0          0
   pscostdiving     :       0.00       0.00          0          0          0
-  randrounding     :       0.02       0.00         13          0          0
+  randrounding     :       0.01       0.00         13          0          0
   rens             :       0.00       0.00          0          0          0
   reoptsols        :       0.00       0.00          0          0          0
   repair           :       0.00       0.00          0          0          0
@@ -228,11 +228,11 @@ LNS (Scheduler)    :      Calls  SetupTime  SolveTime SolveNodes       Sols     
   trustregion      :          0       0.00       0.00          0          0          0    0.00000    0.00000   -1.00000    1.00000      0.900    0    0    0    0    0    0    0    0
 LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
   primal LP        :       0.00          0          0       0.00          -       0.00          0
-  dual LP          :       0.34         13       5148     396.00   14957.85       0.00          0
+  dual LP          :       0.35         13       5148     396.00   14766.29       0.00          0
   lex dual LP      :       0.00          0          0       0.00          -
   barrier LP       :       0.00          0          0       0.00          -       0.00          0
   resolve instable :       0.00          0          0       0.00          -
-  diving/probing LP:       0.26        185       3228      17.45   12206.84
+  diving/probing LP:       0.27        185       3228      17.45   12065.40
   strong branching :       0.00          0          0       0.00          -          -          -          0
     (at root node) :          -          0          0       0.00          -
   conflict analysis:       0.00          4         24       6.00          -
@@ -255,7 +255,7 @@ B&B Tree           :
   switching time   :       0.00
 Root Node          :
   First LP value   : +2.71793383582887e+04
-  First LP Iters   :       4548 (15735.39 Iter/sec)
+  First LP Iters   :       4548 (15563.46 Iter/sec)
   First LP Time    :       0.29
   Final Dual Bound : +2.71793650643573e+04
   Final Root Iters :       5148
@@ -265,10 +265,10 @@ Solution           :
   First Solution   : +1.36801017790000e+05   (in run 1, after 1 nodes, 0.04 seconds, depth 64, found by <clique>)
   Gap First Sol.   :   infinite
   Gap Last Sol.    :       4.87 %
-  Primal Bound     : +2.85018281800000e+04   (in run 1, after 1 nodes, 0.88 seconds, depth 0, found by <feaspump>)
+  Primal Bound     : +2.85018281800000e+04   (in run 1, after 1 nodes, 0.89 seconds, depth 0, found by <feaspump>)
   Dual Bound       : +2.71793650643573e+04
   Gap              :       4.87 %
 Integrals          :      Total       Avg%
-  primal-dual      :      60.40      68.28
+  primal-dual      :      61.03      68.35
   primal-ref       :          -          - (not evaluated)
   dual-ref         :          -          - (not evaluated)

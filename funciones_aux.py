@@ -211,7 +211,8 @@ def solver_con_instancias_generadas(cant_oficinas, cant_centrales, paths_data,ma
     # Ejecutar SCIP con el archivo de comandos
     commands = f"""
 read {main_zpl_path}
-set limit gap 0.06
+set limit gap 0.05
+set limit time 60
 optimize
 
 write solution {solution_save_name}
@@ -234,6 +235,12 @@ quit
         stats = f.read()
         time_match = re.search(r"solving\s*:\s*([\d.]+)", stats)
         solving_time = float(time_match.group(1)) if time_match else "N/A"
+
+        gap_match = re.search(r"Gap\s*[:\s]*([0-9\.]+)", stats)
+        if gap_match:
+            gap_value = float(gap_match.group(1))  # Convierte el valor extraído a float
+        else:
+            gap_value = "N/A"
     
     # Paso 4: Extraer el estado de la solución del archivo solution.txt
     with open(solution_save_name, "r") as f:
@@ -252,9 +259,11 @@ quit
         else:
             objective_value = "N/A"  # Si no se encuentra el objective value, lo asigna como "N/A"
 
+        
+
     
-    with open("soluciones/ej4/results_4.csv", "a", newline="") as f:
+    with open("soluciones/ej4/results___4.csv", "a", newline="") as f:
         writer = csv.writer(f)
-        writer.writerow([cant_oficinas,cant_centrales, solving_time, sol_status, objective_value])
+        writer.writerow([cant_oficinas,cant_centrales, solving_time,gap_value, sol_status, objective_value])
     
     print("Resultados guardados en result_4.csv")

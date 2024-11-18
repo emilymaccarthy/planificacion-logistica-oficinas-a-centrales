@@ -255,7 +255,7 @@ B&B Tree           :
   switching time   :       0.00
 Root Node          :
   First LP value   : +2.71804750918603e+04
-  First LP Iters   :        435 (76679.01 Iter/sec)
+  First LP Iters   :        435 (77678.57 Iter/sec)
   First LP Time    :       0.01
   Final Dual Bound : +2.71804750918603e+04
   Final Root Iters :        435
@@ -269,6 +269,6 @@ Solution           :
   Dual Bound       : +2.71804750918603e+04
   Gap              :       4.87 %
 Integrals          :      Total       Avg%
-  primal-dual      :       1.58      99.54
+  primal-dual      :       1.59      99.56
   primal-ref       :          -          - (not evaluated)
   dual-ref         :          -          - (not evaluated)

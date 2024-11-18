@@ -1,6 +1,6 @@
 SCIP Status        : solving was interrupted [gap limit reached]
-Total Time         :       0.55
-  solving          :       0.54
+Total Time         :       0.56
+  solving          :       0.55
   presolving       :       0.01 (included in solving)
   reading          :       0.01
   copying          :       0.00 (0 times copied the problem)
@@ -116,7 +116,7 @@ Separators         :   ExecTime  SetupTime      Calls  RootCalls    Cutoffs    D
   disjunctive      :       0.00       0.00          0          0          0          0          0          0          0          0          0          0          0
   eccuts           :       0.00       0.00          0          0          0          0          0          0          0          0          0          0          0
   gauge            :       0.00       0.00          0          0          0          0          0          0          0          0          0          0          0
-  gomory           :       0.36       0.00         10         10          0          0        898       1238          0         12         12          0          0
+  gomory           :       0.37       0.00         10         10          0          0        898       1238          0         12         12          0          0
   > gomorymi       :          -          -          -          -          -          -          -       1238          0         12         12          0          -
   > strongcg       :          -          -          -          -          -          -          -          0          0          0          0          0          -
   impliedbounds    :       0.00       0.00         12         12          0          0          0          0          0          0          0          0          0
@@ -230,11 +230,11 @@ LNS (Scheduler)    :      Calls  SetupTime  SolveTime SolveNodes       Sols     
   trustregion      :          0       0.00       0.00          0          0          0    0.00000    0.00000   -1.00000    1.00000      0.900    0    0    0    0    0    0    0    0
 LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
   primal LP        :       0.00          0          0       0.00          -       0.00          0
-  dual LP          :       0.04         13       1352     104.00   32788.48       0.00          0
+  dual LP          :       0.04         13       1352     104.00   32259.60       0.00          0
   lex dual LP      :       0.00          0          0       0.00          -
   barrier LP       :       0.00          0          0       0.00          -       0.00          0
   resolve instable :       0.00          0          0       0.00          -
-  diving/probing LP:       0.05        140        853       6.09   17296.27
+  diving/probing LP:       0.05        140        853       6.09   16971.41
   strong branching :       0.00          0          0       0.00          -          -          -          0
     (at root node) :          -          0          0       0.00          -
   conflict analysis:       0.00          2         20      10.00          -
@@ -257,7 +257,7 @@ B&B Tree           :
   switching time   :       0.00
 Root Node          :
   First LP value   : +2.71796043537060e+04
-  First LP Iters   :        951 (41335.25 Iter/sec)
+  First LP Iters   :        951 (41088.79 Iter/sec)
   First LP Time    :       0.02
   Final Dual Bound : +2.71796487053998e+04
   Final Root Iters :       1352
@@ -267,10 +267,10 @@ Solution           :
   First Solution   : +5.70017224400000e+04   (in run 1, after 1 nodes, 0.02 seconds, depth 58, found by <clique>)
   Gap First Sol.   :   infinite
   Gap Last Sol.    :       4.87 %
-  Primal Bound     : +2.85021656300000e+04   (in run 1, after 1 nodes, 0.54 seconds, depth 0, found by <feaspump>)
+  Primal Bound     : +2.85021656300000e+04   (in run 1, after 1 nodes, 0.55 seconds, depth 0, found by <feaspump>)
   Dual Bound       : +2.71796487053998e+04
   Gap              :       4.87 %
 Integrals          :      Total       Avg%
-  primal-dual      :      15.37      28.25
+  primal-dual      :      15.55      28.17
   primal-ref       :          -          - (not evaluated)
   dual-ref         :          -          - (not evaluated)

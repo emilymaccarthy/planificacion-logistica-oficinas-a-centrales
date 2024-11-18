@@ -1,7 +1,7 @@
 SCIP Status        : solving was interrupted [gap limit reached]
-Total Time         :       3.75
-  solving          :       3.71
-  presolving       :       0.06 (included in solving)
+Total Time         :       3.92
+  solving          :       3.88
+  presolving       :       0.08 (included in solving)
   reading          :       0.04
   copying          :       0.00 (0 times copied the problem)
 Original Problem   :
@@ -59,8 +59,8 @@ Constraints        :     Number  MaxNumber  #Separate #Propagate    #EnfoLP    #
 Constraint Timings :  TotalTime  SetupTime   Separate  Propagate     EnfoLP     EnfoPS     EnfoRelax   Check    ResProp    SB-Prop
   benderslp        :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
   integral         :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
-  knapsack         :       0.05       0.00       0.00       0.04       0.00       0.00       0.00       0.00       0.00       0.00
-  setppc           :       0.03       0.00       0.00       0.03       0.00       0.00       0.00       0.00       0.00       0.00
+  knapsack         :       0.03       0.00       0.00       0.02       0.00       0.00       0.00       0.00       0.00       0.00
+  setppc           :       0.02       0.00       0.00       0.02       0.00       0.00       0.00       0.00       0.00       0.00
   logicor          :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
   benders          :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
   fixedvar         :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
@@ -86,7 +86,7 @@ Propagator Timings :  TotalTime  SetupTime   Presolve  Propagate    ResProp    S
   pseudoobj        :       0.00       0.00       0.00       0.00       0.00       0.00
   redcost          :       0.00       0.00       0.00       0.00       0.00       0.00
   rootredcost      :       0.00       0.00       0.00       0.00       0.00       0.00
-  symmetry         :       0.00       0.00       0.00       0.00       0.00       0.00
+  symmetry         :       0.01       0.00       0.00       0.00       0.00       0.00
   vbounds          :       0.00       0.00       0.00       0.00       0.00       0.00
 Symmetry           :
   orbitopal red.   :          0 reductions applied,          0 cutoffs
@@ -114,7 +114,7 @@ Separators         :   ExecTime  SetupTime      Calls  RootCalls    Cutoffs    D
   disjunctive      :       0.00       0.00          0          0          0          0          0          0          0          0          0          0          0
   eccuts           :       0.00       0.00          0          0          0          0          0          0          0          0          0          0          0
   gauge            :       0.00       0.00          0          0          0          0          0          0          0          0          0          0          0
-  gomory           :       0.15       0.00         10         10          0          0          0          0          0          0          0          0          0
+  gomory           :       0.19       0.00         10         10          0          0          0          0          0          0          0          0          0
   > gomorymi       :          -          -          -          -          -          -          -          0          0          0          0          0          -
   > strongcg       :          -          -          -          -          -          -          -          0          0          0          0          0          -
   impliedbounds    :       0.00       0.00         11         11          0          0          0          0          0          0          0          0          0
@@ -162,13 +162,13 @@ Primal Heuristics  :   ExecTime  SetupTime      Calls      Found       Best
   clique           :       0.01       0.00          1          1          1
   coefdiving       :       0.00       0.00          0          0          0
   completesol      :       0.00       0.00          0          0          0
-  conflictdiving   :       0.59       0.00          1          1          1
+  conflictdiving   :       0.58       0.00          1          1          1
   crossover        :       0.00       0.00          0          0          0
   dins             :       0.00       0.00          0          0          0
   distributiondivin:       0.00       0.00          0          0          0
   dps              :       0.00       0.00          0          0          0
   dualval          :       0.00       0.00          0          0          0
-  farkasdiving     :       1.07       0.00          1          0          0
+  farkasdiving     :       1.08       0.00          1          0          0
   feaspump         :       0.19       0.00          1          0          0
   fixandinfer      :       0.00       0.00          0          0          0
   fracdiving       :       0.00       0.00          0          0          0
@@ -211,7 +211,7 @@ Primal Heuristics  :   ExecTime  SetupTime      Calls      Found       Best
   trysol           :       0.00       0.00          0          0          0
   twoopt           :       0.00       0.00          0          0          0
   undercover       :       0.00       0.00          0          0          0
-  vbounds          :       0.09       0.00          1          0          0
+  vbounds          :       0.05       0.00          1          0          0
   veclendiving     :       0.00       0.00          0          0          0
   zeroobj          :       0.00       0.00          0          0          0
   zirounding       :       0.00       0.00          1          0          0
@@ -228,11 +228,11 @@ LNS (Scheduler)    :      Calls  SetupTime  SolveTime SolveNodes       Sols     
   trustregion      :          0       0.00       0.00          0          0          0    0.00000    0.00000   -1.00000    1.00000      0.900    0    0    0    0    0    0    0    0
 LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
   primal LP        :       0.00          0          0       0.00          -       0.00          0
-  dual LP          :       1.45         12      11111     925.92    7662.11       0.00          0
+  dual LP          :       1.61         12      11111     925.92    6902.45       0.00          0
   lex dual LP      :       0.00          0          0       0.00          -
   barrier LP       :       0.00          0          0       0.00          -       0.00          0
   resolve instable :       0.00          0          0       0.00          -
-  diving/probing LP:       1.73        254      14103      55.52    8172.77
+  diving/probing LP:       1.73        254      14103      55.52    8132.87
   strong branching :       0.00          0          0       0.00          -          -          -          0
     (at root node) :          -          0          0       0.00          -
   conflict analysis:       0.00          6         51       8.50          -
@@ -255,20 +255,20 @@ B&B Tree           :
   switching time   :       0.00
 Root Node          :
   First LP value   : +2.71792100421872e+04
-  First LP Iters   :      10468 (8196.22 Iter/sec)
-  First LP Time    :       1.28
+  First LP Iters   :      10468 (7287.83 Iter/sec)
+  First LP Time    :       1.44
   Final Dual Bound : +2.71792391506667e+04
   Final Root Iters :      11111
   Root LP Estimate :                     -
 Solution           :
   Solutions found  :          4 (4 improvements)
-  First Solution   : +1.71000649230000e+05   (in run 1, after 1 nodes, 0.08 seconds, depth 88, found by <clique>)
+  First Solution   : +1.71000649230000e+05   (in run 1, after 1 nodes, 0.09 seconds, depth 88, found by <clique>)
   Gap First Sol.   :   infinite
   Gap Last Sol.    :       4.87 %
-  Primal Bound     : +2.85028558300000e+04   (in run 1, after 1 nodes, 3.71 seconds, depth 90, found by <conflictdiving>)
+  Primal Bound     : +2.85028558300000e+04   (in run 1, after 1 nodes, 3.88 seconds, depth 90, found by <conflictdiving>)
   Dual Bound       : +2.71792391506667e+04
   Gap              :       4.87 %
 Integrals          :      Total       Avg%
-  primal-dual      :     236.38      63.65
+  primal-dual      :     251.39      64.73
   primal-ref       :          -          - (not evaluated)
   dual-ref         :          -          - (not evaluated)

@@ -255,7 +255,7 @@ B&B Tree           :
   switching time   :       0.00
 Root Node          :
   First LP value   :          -
-  First LP Iters   :        157 (130724.40 Iter/sec)
+  First LP Iters   :        157 (125600.00 Iter/sec)
   First LP Time    :       0.00
   Final Dual Bound :          -
   Final Root Iters :        157

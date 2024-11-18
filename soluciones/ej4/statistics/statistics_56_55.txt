@@ -1,6 +1,6 @@
 SCIP Status        : solving was interrupted [gap limit reached]
-Total Time         :       3.35
-  solving          :       3.31
+Total Time         :       3.05
+  solving          :       3.01
   presolving       :       0.06 (included in solving)
   reading          :       0.04
   copying          :       0.00 (0 times copied the problem)
@@ -59,8 +59,8 @@ Constraints        :     Number  MaxNumber  #Separate #Propagate    #EnfoLP    #
 Constraint Timings :  TotalTime  SetupTime   Separate  Propagate     EnfoLP     EnfoPS     EnfoRelax   Check    ResProp    SB-Prop
   benderslp        :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
   integral         :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
-  knapsack         :       0.03       0.00       0.00       0.03       0.00       0.00       0.00       0.00       0.00       0.00
-  setppc           :       0.02       0.00       0.00       0.02       0.00       0.00       0.00       0.00       0.00       0.00
+  knapsack         :       0.03       0.00       0.00       0.02       0.00       0.00       0.00       0.00       0.00       0.00
+  setppc           :       0.02       0.00       0.00       0.01       0.00       0.00       0.00       0.00       0.00       0.00
   logicor          :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
   benders          :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
   fixedvar         :       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00       0.00
@@ -162,14 +162,14 @@ Primal Heuristics  :   ExecTime  SetupTime      Calls      Found       Best
   clique           :       0.01       0.00          1          1          1
   coefdiving       :       0.00       0.00          0          0          0
   completesol      :       0.00       0.00          0          0          0
-  conflictdiving   :       0.61       0.00          1          1          1
+  conflictdiving   :       0.60       0.00          1          1          1
   crossover        :       0.00       0.00          0          0          0
   dins             :       0.00       0.00          0          0          0
   distributiondivin:       0.00       0.00          0          0          0
   dps              :       0.00       0.00          0          0          0
   dualval          :       0.00       0.00          0          0          0
-  farkasdiving     :       1.10       0.00          1          0          0
-  feaspump         :       0.15       0.00          1          0          0
+  farkasdiving     :       0.83       0.00          1          0          0
+  feaspump         :       0.14       0.00          1          0          0
   fixandinfer      :       0.00       0.00          0          0          0
   fracdiving       :       0.00       0.00          0          0          0
   gins             :       0.00       0.00          0          0          0
@@ -228,11 +228,11 @@ LNS (Scheduler)    :      Calls  SetupTime  SolveTime SolveNodes       Sols     
   trustregion      :          0       0.00       0.00          0          0          0    0.00000    0.00000   -1.00000    1.00000      0.900    0    0    0    0    0    0    0    0
 LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
   primal LP        :       0.00          0          0       0.00          -       0.00          0
-  dual LP          :       1.13         15      10627     708.47    9409.32       0.00          0
+  dual LP          :       1.12         15      10627     708.47    9502.61       0.00          0
   lex dual LP      :       0.00          0          0       0.00          -
   barrier LP       :       0.00          0          0       0.00          -       0.00          0
   resolve instable :       0.00          0          0       0.00          -
-  diving/probing LP:       1.74        224      13056      58.29    7510.38
+  diving/probing LP:       1.49        224      13056      58.29    8765.86
   strong branching :       0.00          0          0       0.00          -          -          -          0
     (at root node) :          -          0          0       0.00          -
   conflict analysis:       0.00          7         70      10.00          -
@@ -255,8 +255,8 @@ B&B Tree           :
   switching time   :       0.00
 Root Node          :
   First LP value   : +2.71792898609635e+04
-  First LP Iters   :       9753 (9778.62 Iter/sec)
-  First LP Time    :       1.00
+  First LP Iters   :       9753 (9879.15 Iter/sec)
+  First LP Time    :       0.99
   Final Dual Bound : +2.71793209001393e+04
   Final Root Iters :      10627
   Root LP Estimate :                     -
@@ -265,10 +265,10 @@ Solution           :
   First Solution   : +1.76700806480000e+05   (in run 1, after 1 nodes, 0.07 seconds, depth 82, found by <clique>)
   Gap First Sol.   :   infinite
   Gap Last Sol.    :       4.87 %
-  Primal Bound     : +2.85028713000000e+04   (in run 1, after 1 nodes, 3.31 seconds, depth 88, found by <conflictdiving>)
+  Primal Bound     : +2.85028713000000e+04   (in run 1, after 1 nodes, 3.01 seconds, depth 88, found by <conflictdiving>)
   Dual Bound       : +2.71793209001393e+04
   Gap              :       4.87 %
 Integrals          :      Total       Avg%
-  primal-dual      :     181.02      54.65
+  primal-dual      :     170.78      56.75
   primal-ref       :          -          - (not evaluated)
   dual-ref         :          -          - (not evaluated)

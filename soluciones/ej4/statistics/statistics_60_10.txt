@@ -228,7 +228,7 @@ LNS (Scheduler)    :      Calls  SetupTime  SolveTime SolveNodes       Sols     
   trustregion      :          0       0.00       0.00          0          0          0    0.00000    0.00000   -1.00000    1.00000      0.900    0    0    0    0    0    0    0    0
 LP                 :       Time      Calls Iterations  Iter/call   Iter/sec  Time-0-It Calls-0-It    ItLimit
   primal LP        :       0.00          0          0       0.00          -       0.00          0
-  dual LP          :       0.03          9       1086     120.67   31804.60       0.00          0
+  dual LP          :       0.03          9       1086     120.67   31798.09       0.00          0
   lex dual LP      :       0.00          0          0       0.00          -
   barrier LP       :       0.00          0          0       0.00          -       0.00          0
   resolve instable :       0.00          0          0       0.00          -
@@ -255,7 +255,7 @@ B&B Tree           :
   switching time   :       0.00
 Root Node          :
   First LP value   : +2.89338265908858e+04
-  First LP Iters   :        765 (38365.10 Iter/sec)
+  First LP Iters   :        765 (38411.33 Iter/sec)
   First LP Time    :       0.02
   Final Dual Bound : +3.42019619360903e+04
   Final Root Iters :       1086
@@ -269,6 +269,6 @@ Solution           :
   Dual Bound       : +3.42019619360903e+04
   Gap              :       0.00 %
 Integrals          :      Total       Avg%
-  primal-dual      :      14.69      37.40
+  primal-dual      :      14.72      37.53
   primal-ref       :          -          - (not evaluated)
   dual-ref         :          -          - (not evaluated)

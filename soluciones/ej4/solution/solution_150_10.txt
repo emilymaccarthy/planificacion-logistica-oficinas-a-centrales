@@ -1,2 +1,2 @@
-solution status: unknown
+solution status: infeasible
 no solution available

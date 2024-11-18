@@ -32,7 +32,7 @@ def main():
     cant_centrales = [5,10,20,30,40,45,50,55,60]
     
     #cantidad de tiempo que quiero que el solver corra encontrando una solucion
-    cant_minutos = 5
+    cant_minutos = 1
     tiempo_solver = 60*cant_minutos
     
     for oficina in cant_oficinas:
@@ -50,7 +50,8 @@ def main():
             )
     
     
-
+if __name__ == "__main__":
+    main()
     
 # Con Gap = 0.05 llega hasta 60_20
 

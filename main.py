@@ -7,7 +7,7 @@ def main():
     
     
     ##1: correr el solver
-    main_1 = "main_og.zpl"
+    main_1 = "main1.zpl"
     run_solver(main_1,"soluciones/ej1/solution.txt","soluciones/ej1/statistics.txt")
     
     ##2: correr el solver +1 restriccion

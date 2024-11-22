@@ -1,16 +1,12 @@
 # Set de las oficinas (O) y centros operacionales (C)
-# set O := {1 to 56};  # Oficinas
 set O := { read "data/og/oficinas.txt" as "<1n>" };
-# set C := {1 to 10};  # Centros Operacionales
 set C := { read "data/og/centrales.txt" as "<1n>" };
 
 
 # Parameteros
-
 param demand[O] := read "data/og/oficinas.txt" as "2n";
 param distance[O * C] := read "data/og/distancias.txt" as "n+";
 
-# do forall <o> in O do print demand[o];
 
 #Para guardar valores 
 param MaxOP := 15000;
@@ -47,7 +43,4 @@ subto MaximoOficinaACentral:
     forall <c> in C do
         sum <o> in O : x[o,c] <= 10;
 
-
-# scip -b commands.txt corre el archivo compila y guarda soluciones
-# luego correr archivo de python (generador.py) para guardar las varibale sprinciaples y el tiempo del solver
 

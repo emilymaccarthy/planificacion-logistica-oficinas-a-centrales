@@ -1,30 +1,23 @@
-from funciones_aux import run_solver, solver_eficciency_maxop, solver_con_instancias_generadas
+# Abriri ennvoirment que contenga scip y correr este file
+# conda activate scip-dev
+
+from funciones_aux import run_solver, solver_con_instancias_generadas
 
 def main():
     
     
     ##1: correr el solver
     main_1 = "main_og.zpl"
-    # run_solver(main_1)
+    run_solver(main_1,"soluciones/ej1/solution.txt","soluciones/ej1/statistics.txt")
     
     ##2: correr el solver +1 restriccion
     main_2 = "main2.zpl"
-    # run_solver(main_2) # creo que la nueva restriccion nu funca
+    run_solver(main_2,"soluciones/ej2/solution.txt","soluciones/ej2/statistics.txt") # creo que la nueva restriccion nu funca
     
     ##3: testear las diferentes instancias de maxop
     main_3 = "main3.zpl"
-
-    # #maxOPS = [5000,6000,7000,8000,9000,10000,11000,13000,15000,17000,19000]
-    # #maxOPS = [8100,8200,8300,8400,8500,8600,8700,8800,8900,9200,9400,9600]
-    # maxOPS = [11000,12000,14000,16000,18000]
-    # for maxOP in maxOPS:
-    #     solver_eficciency_maxop(
-    #         main_zpl_path=main_3,
-    #         solution_save_name=f"soluciones/ej3/solution/solution_{maxOP}.txt",
-    #         statistics_save_name=f"soluciones/ej3/statistics/statistics_{maxOP}.txt",
-    #         maximun_op_per_hour=maxOP
-    #     )
-
+    run_solver(main_3,"soluciones/ej3/solution.txt","soluciones/ej3/statistics.txt")
+    
     ##4: generar instancias nuevas 
     main_4 = "main4.zpl"
     

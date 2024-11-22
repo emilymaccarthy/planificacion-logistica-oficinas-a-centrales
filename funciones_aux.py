@@ -79,14 +79,14 @@ def haversine(lat1, lon1, lat2, lon2):
     # Distancia en kilómetros
     return R * c
     
-def run_solver(main_zpl_file):
+def run_solver(main_zpl_file,satistic_file,solution_file):
     #runs the solver nomasy genera los archivos de solucion y estadisticas
     commands = f"""
 read {main_zpl_file}
 optimize
 
-write solution solution.txt
-write statistics statistics.txt
+write solution {solution_file}
+write statistics {satistic_file}
 
 quit
         """
@@ -95,85 +95,7 @@ quit
         
     subprocess.run(["scip", "-b", "commands.txt"])
     
-def solver_eficciency_maxop(main_zpl_path, solution_save_name, statistics_save_name,maximun_op_per_hour):
-    """Corre el solver con el main pasado, guarda la solucion y las estadisticas de la solucion, 
-    tambien en un csv guarda el tiempo, maxop, cantidad oficinas, cantidad centrales, si resolvio (1) o no (0)
 
-    Args:
-        main_zpl_path (string): path donde se encuentra el main.zpl
-        solution_save_name (string): nombre, sine xtension del tipo arhcivo
-        statistics_save_name (string): nombre del arhcivo para guardar, sin la extension del tipo de archivo
-        distancias (_type_): _description_
-    """
-    # Open the ZIMPL file and read its content
-    with open(main_zpl_path, 'r') as file:
-        lines = file.readlines()
-
-    # Look for the line containing 'param MaxOP' and update it
-    updated_lines = []
-    for line in lines:
-        if line.strip().startswith("param MaxOP"):
-            updated_lines.append(f"param MaxOP := {maximun_op_per_hour};" + "\n")  # Replace the entire line with the new value
-        else:
-            updated_lines.append(line)
-
-    # Write the updated content back to the file
-    with open(main_zpl_path, 'w') as file:
-        file.writelines(updated_lines)
-    
-        
-   # Ejecutar SCIP con el archivo de comandos
-    
-    commands = f"""
-read {main_zpl_path}
-optimize
-
-write solution {solution_save_name}
-write statistics {statistics_save_name}
-quit
-        """
-
-    with open("commands.txt", "w") as cmd_file:
-        cmd_file.write(commands)
-        
-    try:
-        subprocess.run(["scip", "-b", "commands.txt"], check=True)  # Will raise an error if SCIP fails
-    except subprocess.CalledProcessError as e:
-        print(f"Error running SCIP: {e}")
-        sys.exit(1)
-
-    
-    # Paso 3: Extraer el tiempo de resolución del archivo statistics.txt
-    with open(statistics_save_name, "r") as f:
-        stats = f.read()
-        time_match = re.search(r"solving\s*:\s*([\d.]+)", stats)
-        solving_time = float(time_match.group(1)) if time_match else "N/A"
-    
-    # Paso 4: Extraer el estado de la solución del archivo solution.txt
-    with open(solution_save_name, "r") as f:
-        solution = f.read()
-        sol_match = re.search(r"solution\s+status\s*[:\s]*([a-zA-Z\s]+)", solution)
-        if sol_match:
-            sol_status = sol_match.group(1)
-            sol_status = 1 if "optimal solution found" in sol_status.lower() else 0
-        else:
-            sol_status = "N/A"
-    
-    # Buscar el objective value
-        objective_match = re.search(r"objective value\s*[:\s]*([0-9\.]+)", solution)
-        if objective_match:
-            objective_value = float(objective_match.group(1))  # Convierte el valor extraído a float
-        else:
-            objective_value = "N/A"  # Si no se encuentra el objective value, lo asigna como "N/A"
-
-    # Append results to the CSV file
-    with open("soluciones/ej3/result_3.csv", "a", newline="") as f:
-        writer = csv.writer(f)
-        writer.writerow([maximun_op_per_hour, solving_time, sol_status, objective_value])
-
-    
-    print("Resultados guardados en result_3.csv")
-     
 def solver_con_instancias_generadas(cant_oficinas, cant_centrales, paths_data,main_zpl_path, solution_save_name, statistics_save_name,time_limit):
     
     #primer generar los arhcivos de oficinas, centrales, distancias

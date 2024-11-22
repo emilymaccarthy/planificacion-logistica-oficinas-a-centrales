@@ -4,8 +4,8 @@ set limit gap 0.05
 set limit time 60
 optimize
 
-write solution soluciones/ej4/solution/solution_300_60.txt
-write statistics soluciones/ej4/statistics/statistics_300_60.txt
+write solution soluciones/ej4/solution/solution_60_20.txt
+write statistics soluciones/ej4/statistics/statistics_60_20.txt
 
 quit
     

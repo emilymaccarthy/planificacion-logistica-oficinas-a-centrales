@@ -1,29 +1,21 @@
 # Set de las oficinas (O) y centros operacionales (C)
-# set O := {1 to 56};  # Oficinas
 set O := { read "data/og/oficinas.txt" as "<1n>" };
-# set C := {1 to 10};  # Centros Operacionales
 set C := { read "data/og/centrales.txt" as "<1n>" };
 
 
 # Parameteros
-
 param demand[O] := read "data/og/oficinas.txt" as "2n";
 param distance[O * C] := read "data/og/distancias.txt" as "n+";
-
-# do forall <o> in O do print demand[o];
-
-#Para guardar valores 
-param MaxOP := 18000;
-
 
 ## Variables
 var y[C] binary;                  # Si el centro c esta abierto (1) o cerrado (0)
 var x[O * C] binary;              # Si la oficina o esta abierta en el centro de operacion c
+var MaxOP;                           # Variable auxiliar para la funcion objetivo
 
-# Funcion objetivo: Minimizar el costo total (costo de abrir + costo del cable)
-minimize total_cost:
-    sum <c> in C : 5700 * y[c] +
-    sum <o,c> in O * C : x[o,c] * distance[o,c] * (17/1000);
+# Funcion objetivo: Minimizar el numero minimo de centrales requerido para que sea factible el problema
+minimize num_minimo_opXhora_necesarios:
+    MaxOP;
+
 
 ## Restricciones
 
@@ -42,12 +34,4 @@ subto MaximasOpPorHora:
     forall <c> in C do
         sum <o> in O : x[o,c] * demand[o] <= MaxOP;
 
-# #2) el total de oficinas no puede exceder 10 oficinas por central operativa: punto 2
-# subto MaximoOficinaACentral:
-#     forall <c> in C do
-#         sum <o> in O : x[o,c] <= 10;
-
-
-# scip -b commands.txt corre el archivo compila y guarda soluciones
-# luego correr archivo de python (generador.py) para guardar las varibale sprinciaples y el tiempo del solver
 
